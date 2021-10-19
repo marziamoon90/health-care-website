@@ -1,0 +1,79 @@
+.background-img{
+        background-image: url('../../../images/banner.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center ;
+        min-height: 70vh;
+}
+.nav-bar{
+    color: #7f2549 !important;
+}
+.nav-bar a{
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #7f2549 !important;
+    font-size: 1.2em;
+    font-weight: bolder;
+    }
+.nav-bar a:hover{
+    text-decoration: underline;
+}
+
+.login-button{
+    position: relative;
+    display: inline-block;
+    background-color: #7f2549;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    text-align: center; 
+     
+}
+
+.nav-bar img{
+    border-radius: 50%;
+}
+.title{
+    font-weight: 900;
+}
+.neumorphism{
+    -webkit-border-radius: 29px;
+border-radius: 29px;
+background: #D1D8EC;
+-webkit-box-shadow: 7px 7px 14px #0a1436, -7px -7px 14px #39435c;
+box-shadow: 7px 7px 14px #666c80, -7px -7px 14px #0b1327;
+}
+
+
+
+
+/* responsive for mobile  */
+@media screen and (max-width: 992px){
+    .background-img{
+        background-image: url('../../../images/banner.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 40vh;
+        background-position: center ;
+        min-width: 30vh;
+}
+.nav-bar img{
+    width: 50px;
+}
+.title ,.relax{
+   display: none;
+}
+
+.clinic-details{
+    flex-direction: column;
+    margin: 0;
+    padding: 15px;
+       
+}
+.clinic-details img{
+    width: 90%;
+   margin-top: 15px;
+}
+
+}

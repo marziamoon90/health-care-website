@@ -1,0 +1,74 @@
+[
+    {
+        "therapy": "Physiotherapy",
+        "img": "https://smartdemowp.com/resox/wp-content/uploads/service-5.jpg",
+        "img2": "https://smartdemowp.com/resox/wp-content/uploads/service-details-7.jpg",
+        "phone": 608845,
+        "description": "Physiotherapy is a degree-based healthcare profession.Physiotherapy helps to restore movement and function when someone is affected by injury, illness or disability.",
+        "id": 1,
+        "cost": 60,
+        "timing": "10:00AM-4.00PM",
+        "sunday": "Work Off",
+        "monday": "9AM-5PM"
+    },
+    {
+        "therapy": "Massage Therapy",
+        "img": "https://smartdemowp.com/resox/wp-content/uploads/service-6.jpg",
+        "img2": "https://smartdemowp.com/resox/wp-content/uploads/service-details-2-1.jpg",
+        "phone": 608845,
+        "description": "There are several types of massage that focus on different parts of the body or healing approaches. Massage is the practice of rubbing and kneading the body using the hands. During a massage, a massage therapist will apply gentle or strong pressure to the muscles and joints of the body to ease pain and tension. A massage therapist is a person trained in giving massages.",
+        "id": 2,
+        "cost": 50,
+        "timing": "10:00AM-4.00PM",
+        "sunday": "Work Off",
+        "monday": "9PM-5PM"
+    },
+    {
+        "therapy": "Sport Injuries",
+        "img": "https://smartdemowp.com/resox/wp-content/uploads/service-7-1.jpg",
+        "img2": "https://smartdemowp.com/resox/wp-content/uploads/service-details-3.jpg",
+        "phone": 608845,
+        "description": "These injuries should be appropriately addressed in order to keep the athlete safe. It is useful to examine the biomechanics of an athlete participating in a particular sport, therapists say.",
+        "id": 3,
+        "cost": 45,
+        "timing": "10:00AM-4.00PM",
+        "sunday": "Work Off",
+        "monday": "9PM-5PM"
+    },
+    {
+        "therapy": "Chiropratic Therapy",
+        "img": "https://smartdemowp.com/resox/wp-content/uploads/service-8.jpg",
+        "img2": "https://smartdemowp.com/resox/wp-content/uploads/service-details-4-1.jpg",
+        "phone": 608845,
+        "description": "Chiropractic adjustment is a procedure in which trained specialists (chiropractors) use their hands or a small instrument to apply a controlled, sudden force to a spinal joint. The goal of this procedure, also known as spinal manipulation, is to improve spinal motion and improve your body's physical function.",
+        "id": 4,
+        "cost": 95,
+        "timing": "10:00AM-4.00PM",
+        "sunday": "Work Off",
+        "monday": "9PM-5PM"
+    },
+    {
+        "therapy": "Clinical Pilates",
+        "img": "https://smartdemowp.com/resox/wp-content/uploads/service-9-1.jpg",
+        "img2": "https://smartdemowp.com/resox/wp-content/uploads/service-details-5.jpg",
+        "phone": 608845,
+        "description": "Clinical Pilates is a form of physical exercise that focuses on posture, core stability, balance, control, strength, flexibility, and breathing. The Pilates Method was developed by Joseph Pilates in the early 20th century in Germany. These days, Clinical Pilates is often used in conjunction with physiotherapy as a means of treating a variety of injuries, particularly those of the neck and back.",
+        "id": 5,
+        "cost": 65,
+        "timing": "10:00AM-4.00PM",
+        "sunday": "Work Off",
+        "monday": "9PM-5PM"
+    },
+    {
+        "therapy": "Work Injuries",
+        "img": "https://smartdemowp.com/resox/wp-content/uploads/service-10.jpg",
+        "img2": "https://smartdemowp.com/resox/wp-content/uploads/service-details-6-1.jpg",
+        "phone": 608845,
+        "description": "Workplace injuries are injuries or illnesses that occur in relation to an employees job. Most states narrow the definition of a workplace injury to one that arises out of and in the course of employment to prevent employees from pursuing compensation for injuries not directly caused by the job.",
+        "id": 6,
+        "cost": 30,
+        "timing": "10:00AM-4.00PM",
+        "sunday": "Work Off",
+        "monday": "9PM-5PM"
+    }
+]
