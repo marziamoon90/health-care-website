@@ -5,6 +5,24 @@
         background-position: center ;
         min-height: 70vh;
 }
+
+.about-url1{
+    background-image: url("https://smartdemowp.com/resox/wp-content/uploads/feature-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+   }
+
+.patient{
+    position: absolute;
+    content: '';
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    left: -1px;
+    top: -1px;
+    z-index: -1;
+    transition: all 500ms ease;
+}
 .nav-bar{
     color: #7f2549 !important;
 }
