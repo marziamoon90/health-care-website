@@ -1,76 +1,93 @@
 import React, { useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import logo from '../../images/logo.png'
 import useAuth from '../../Hooks/useAuth';
 
 
 
 const Registration = () => {
+    const { user, signUpWithEmail, signInUsingGoogle } = useAuth()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState('');
-    const { user, signUpWithEmail } = useAuth();
+    const location = useLocation();
     const history = useHistory();
+    const redirect_uri = location.state?.from || '/therapy';
 
     const handleSignup = (e) => {
         e.preventDefault();
         signUpWithEmail(email, password)
-            .then((userCredential) => {
-                history.push('./home')
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                history.push('./therapy')
                 setError("")
             }).catch((error) => {
                 setError(error.message)
             });
+        console.log('user register')
     }
-    console.log(user)
+
+    // google sign in 
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle()
+            .then(() => {
+                history.push(redirect_uri)
+            })
+    }
+
     return (
-        <div>
-            <Form className='mx-auto w-50 text-white mt-5 border p-4 rounded' onSubmit={handleSignup}>
-                <h3>Please Sign up</h3>
-                <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
-                    </Form.Group>
+        <div className="mt-5">
+            {/* logo in register page  */}
+            <div>
+                <img style={{ borderRadius: '50%', width: "120px" }} src={logo} alt="" />
+                <h3>Wellness Physiotherapy</h3>
+            </div>
 
-                    <Form.Group as={Col} controlId="formGridPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control onBlur={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
-                    </Form.Group>
-                </Row>
+            {/* login form  */}
+            <div className="fw-bold mt-5  d-flex align-items-center justify-content-center text-start">
+                <Form onSubmit={handleSignup} className="w-md-50 rounded border border-3 border-light p-3">
+                    <h3 className='text-info'>Please Register</h3>
+                    <div >
+                        <Form.Group className="mb-3" controlId="formGridAddress1">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control placeholder="Enter your name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formGridAddress1">
+                            <Form.Label>Adress</Form.Label>
+                            <Form.Control placeholder="Enter your name" />
+                        </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formGridAddress1">
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control placeholder="Md Sabbir Khan" />
-                </Form.Group>
+                        {/*email input field  */}
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text>
+                        </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formGridAddress2">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control placeholder="Dhaka,Bangladesh" />
-                </Form.Group>
-
-
-
-                <Form.Group className="mb-3" id="formGridCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                    {error && < small className='text-danger my-4'>Email Already in Use</small>}
-
-                </Form.Group>
-                <Form.Group className="mb-3 d-flex justify-content-between" id="formGridCheckbox">
-                    <div>
-                        <Button variant="primary" type="submit">
-                            Sign up
-                        </Button>
+                        {/* password input field  */}
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control onBlur={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
+                        </Form.Group>
+                        <Button className=" px-4 py-2 fw-bold" variant="info" >Register</Button>
                     </div>
-                    <Link to='/login'>
-                        <Button variant="primary" size="sm">
-                            Already Sign up?
-                        </Button>
-                    </Link>
-                </Form.Group>
-            </Form>
+                    {/* handler button  */}
+                    <div className="mt-3">
+                        <Button onClick={handleGoogleSignIn} className="login-button r" variant="outline-info" ><i className="fab fa-google me-2"></i>Sign up with google</Button>
+                    </div>
+                    {/*go to register page*/}
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Link to="/login">
+                            Already have an account?
+                        </Link>
+                    </Form.Group>
+                </Form>
+            </div>
         </div>
     );
 };

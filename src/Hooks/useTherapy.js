@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useTherapy = () => {
     const [therapy, setTherapy] = useState([])
 
     useEffect(() => {
-        fetch("./data.json")
+        fetch("/data.json")
             .then(res => res.json())
             .then(data => setTherapy(data))
     }, [])
+
     return therapy;
 };
 

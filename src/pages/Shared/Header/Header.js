@@ -3,8 +3,14 @@ import './Header.css'
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import logo from '../../../images/logo.png'
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
+    const { user, logOut } = useAuth()
+
+    const logout = () => {
+        logOut()
+    }
     return (
         <div className="background-img nav-bar">
             <Navbar collapseOnSelect sticky="top" expand="lg" variant="light">
@@ -20,10 +26,19 @@ const Header = () => {
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+
                         <Nav>
-                            <NavLink to="/login">
-                                <Button className="login-button px-4 py-2 rounded-pill" variant="outline-info" ><i className="fas fa-sign-in-alt me-2 text-center"></i>Login</Button>
-                            </NavLink>
+                            {
+                                user.displayName ?
+                                    <div>
+                                        <h4 className="text-info me-3">{user.displayName}</h4>
+                                        <Button onClick={logout} className="login-button px-4 py-2 rounded-pill" variant="outline-info" ><i className="fas fa-sign-out-alt me-2 text-center"></i>Logout</Button>
+                                    </div>
+                                    :
+                                    <NavLink to="/login">
+                                        <Button className="login-button px-4 py-2 rounded-pill" variant="outline-info" ><i className="fas fa-sign-in-alt me-2 text-center"></i>Login</Button>
+                                    </NavLink>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

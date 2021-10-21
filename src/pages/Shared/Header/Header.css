@@ -20,7 +20,7 @@
     height: calc(100% + 2px);
     left: -1px;
     top: -1px;
-    z-index: -1;
+    z-index: 9999;
     transition: all 500ms ease;
 }
 .nav-bar{

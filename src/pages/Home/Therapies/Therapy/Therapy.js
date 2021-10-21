@@ -11,7 +11,7 @@ const Therapy = () => {
         <div className="mt-5 text-start">
             <h1 className="text-center fw-bolder fs-sm-1" >Our Services</h1>
             <Container>
-                <Row xs={1} md={2} className="g-4">
+                <Row xs={1} md={2} className="g-5">
                     {
                         therapy.map(therapies => <SingleTherapy
                             key={therapies.id}

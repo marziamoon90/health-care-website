@@ -12,7 +12,7 @@ const useFirebase = () => {
 
     // sign in using google 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, gooleProvider)
+        return signInWithPopup(auth, gooleProvider)
     }
 
     // sign up with email and password 

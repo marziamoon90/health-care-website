@@ -11,6 +11,7 @@ import Registration from './pages/Registration/Registration';
 import Book from './pages/Book/Book';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import Appoinment from './pages/Home/Therapies/Appoinment/Appoinment';
 
 function App() {
   return (
@@ -35,7 +36,10 @@ function App() {
               <Route path="/login">
                 <Login></Login>
               </Route>
-              <Route path="registration">
+              <Route path="/appointment">
+                <Appoinment></Appoinment>
+              </Route>
+              <Route path="/registration">
                 <Registration></Registration>
               </Route>
               <PrivateRoute path="/book/:therapyId">

@@ -7,20 +7,17 @@ const About = () => {
             <h4>OUR TESTIMONIALS</h4>
             <h1 className="fw-bold">What Our Patients Say</h1>
 
-            <div>
-                <Row sm={1} md={3}>
-                    <Col className="patient">
-                        <h1>David Coper</h1>
-                    </Col>
-                    <Col className="patient">
-                        <h1>David Coper</h1>
-                    </Col>
-                    <Col className="patient">
-                        <h1>David Coper</h1>
-                    </Col>
-
-                </Row>
-            </div >
+            <Row sm={1} md={3}>
+                <Col className="patient">
+                    <h1>David Coper</h1>
+                </Col>
+                <Col className="patient">
+                    <h1>David Coper</h1>
+                </Col>
+                <Col className="patient">
+                    <h1>David Coper</h1>
+                </Col>
+            </Row>
 
 
 

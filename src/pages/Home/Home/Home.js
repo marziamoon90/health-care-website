@@ -43,7 +43,7 @@ const Home = () => {
 
             {/* sliced data for home  */}
             <div className="my-5 text-start container border-light border-top border-bottom border-3 py-4">
-                <h5 >OUR SERVICESf</h5>
+                <h5 >OUR SERVICES</h5>
                 <h1>What We’re Offering</h1>
                 <Container>
                     <Row md={3} className="g-4 ">

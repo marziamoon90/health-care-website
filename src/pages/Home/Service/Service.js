@@ -4,7 +4,7 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Service = ({ therapies }) => {
-    const { therapy, id, img2, description } = therapies;
+    const { therapy, img2, description } = therapies;
     const instruction = description.slice(0, 150)
     return (
         <div>
