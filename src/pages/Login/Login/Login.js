@@ -6,18 +6,18 @@ import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../images/logo.png';
 
 const Login = () => {
-    const { signInUsingGoogle, signInWithEmailPassword } = useAuth()
+    const { googleSignIn, emailSignIn } = useAuth()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
     const location = useLocation();
+    const [error, setError] = useState("");
     const history = useHistory();
     const redirect_uri = location.state?.from || '/therapy';
 
 
     // google sign in 
     const handleGoogleSignIn = () => {
-        signInUsingGoogle()
+        googleSignIn()
             .then(() => {
                 history.push(redirect_uri)
             })
@@ -28,7 +28,7 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         console.log('user signed in')
-        signInWithEmailPassword(email, password)
+        emailSignIn(email, password)
             .then(() => {
                 history.push(redirect_uri);
                 setError("")

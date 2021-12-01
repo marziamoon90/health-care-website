@@ -8,7 +8,7 @@ import useAuth from '../../Hooks/useAuth';
 
 
 const Registration = () => {
-    const { user, signUpWithEmail, signInUsingGoogle } = useAuth()
+    const { user, emailRegister, googleSignIn } = useAuth()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState('');
@@ -18,7 +18,7 @@ const Registration = () => {
 
     const handleSignup = (e) => {
         e.preventDefault();
-        signUpWithEmail(email, password)
+        emailRegister(email, password)
             .then(result => {
                 const user = result.user
                 console.log(user)
@@ -32,7 +32,7 @@ const Registration = () => {
 
     // google sign in 
     const handleGoogleSignIn = () => {
-        signInUsingGoogle()
+        googleSignIn()
             .then(() => {
                 history.push(redirect_uri)
             })

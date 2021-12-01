@@ -29,8 +29,8 @@ const Header = () => {
 
                         <Nav>
                             {
-                                user.displayName ?
-                                    <div>
+                                user.email ?
+                                    <div className="d-flex">
                                         <h4 className="text-info me-3">{user.displayName}</h4>
                                         <Button onClick={logout} className="login-button px-4 py-2 rounded-pill" variant="outline-info" ><i className="fas fa-sign-out-alt me-2 text-center"></i>Logout</Button>
                                     </div>
